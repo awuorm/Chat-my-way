@@ -1,25 +1,19 @@
 import React, { useState } from "react";
 import "./App.css";
 import Chat from "./components/ChatMessage";
+import Signup from "./components/SignUp";
 
 function App() {
-  const [currentView, setCurrentView] = useState(
-   "ChatMessage"
-  );
-
-  const changeView = view => {
-    setCurrentView( `${view} `);
-  };
+  const [currentView, setCurrentView] = useState("ChatMessage");
 
   let view = "";
   if (currentView === "ChatMessage") {
-    view = <Chat changeView={changeView} />;
-  };
+    view = <Chat setCurrentView={setCurrentView} />;
+  } else if (currentView === "signup") {
+    view = <Signup />;
+  }
 
-  return (<div className="App">
-    hELLO FROM APP!
-          {view}
-  </div>);
+  return <div className="App">{view}</div>;
 }
 
 export default App;

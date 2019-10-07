@@ -2,7 +2,7 @@ import React from "react";
 
 const Chat = props => {
   const changeView = () => {
-    props.changeView("signUp");
+    props.setCurrentView("signup");
   };
   return (
     <div>
